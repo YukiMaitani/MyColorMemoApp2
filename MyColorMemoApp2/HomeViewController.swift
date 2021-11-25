@@ -14,7 +14,9 @@ class HomeViewController:UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         setMemoData()
+        
     }
     
     func setMemoData(){
@@ -37,5 +39,13 @@ extension HomeViewController:UITableViewDataSource{
         cell.detailTextLabel?.text = "\(memoDataModel.recordDate)"
         return cell
     }
-    
+}
+
+extension HomeViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let memoDetailViewController = storyboard.instantiateViewController(identifier: "MemoDetailViewController") as! MemoDetailViewController
+        tableView.deselectRow(at: indexPath, animated: true)
+        navigationController?.pushViewController(memoDetailViewController, animated: true)
+    }
 }

@@ -14,6 +14,7 @@
 		6D9D60C2274ED7AC00694A76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D9D60C0274ED7AC00694A76 /* LaunchScreen.storyboard */; };
 		6D9D60CA274EF6E900694A76 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D60C9274EF6E900694A76 /* HomeViewController.swift */; };
 		6D9D60CC274F2F0900694A76 /* MemoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D60CB274F2F0900694A76 /* MemoDataModel.swift */; };
+		6D9D60CE274FB74A00694A76 /* MemoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D60CD274FB74A00694A76 /* MemoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6D9D60C3274ED7AC00694A76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D9D60C9274EF6E900694A76 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6D9D60CB274F2F0900694A76 /* MemoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDataModel.swift; sourceTree = "<group>"; };
+		6D9D60CD274FB74A00694A76 /* MemoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				6D9D60C0274ED7AC00694A76 /* LaunchScreen.storyboard */,
 				6D9D60C3274ED7AC00694A76 /* Info.plist */,
 				6D9D60CB274F2F0900694A76 /* MemoDataModel.swift */,
+				6D9D60CD274FB74A00694A76 /* MemoDetailViewController.swift */,
 			);
 			path = MyColorMemoApp2;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D9D60CE274FB74A00694A76 /* MemoDetailViewController.swift in Sources */,
 				6D9D60B6274ED7A700694A76 /* AppDelegate.swift in Sources */,
 				6D9D60B8274ED7A700694A76 /* SceneDelegate.swift in Sources */,
 				6D9D60CA274EF6E900694A76 /* HomeViewController.swift in Sources */,
