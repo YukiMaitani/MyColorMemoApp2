@@ -31,10 +31,33 @@
                     <view key="view" contentMode="scaleToFill" id="oe3-IR-RhI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mOZ-KV-Djo">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="AXe-LZ-yZO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mOZ-KV-Djo" firstAttribute="top" secondItem="AXe-LZ-yZO" secondAttribute="top" id="RDy-ER-0WB"/>
+                            <constraint firstItem="mOZ-KV-Djo" firstAttribute="top" secondItem="AXe-LZ-yZO" secondAttribute="top" id="Vtg-mj-1He"/>
+                            <constraint firstItem="AXe-LZ-yZO" firstAttribute="trailing" secondItem="mOZ-KV-Djo" secondAttribute="trailing" id="Y9q-Vn-x7v"/>
+                            <constraint firstItem="mOZ-KV-Djo" firstAttribute="leading" secondItem="AXe-LZ-yZO" secondAttribute="leading" id="YWc-ai-g4m"/>
+                            <constraint firstItem="mOZ-KV-Djo" firstAttribute="trailing" secondItem="AXe-LZ-yZO" secondAttribute="trailing" id="aP6-De-7Kg"/>
+                            <constraint firstItem="mOZ-KV-Djo" firstAttribute="trailing" secondItem="AXe-LZ-yZO" secondAttribute="trailing" id="aZX-Tz-FJS"/>
+                            <constraint firstItem="mOZ-KV-Djo" firstAttribute="bottom" secondItem="AXe-LZ-yZO" secondAttribute="bottom" id="mX8-JN-miJ"/>
+                            <constraint firstItem="mOZ-KV-Djo" firstAttribute="top" secondItem="AXe-LZ-yZO" secondAttribute="top" id="mm1-tR-Vgl"/>
+                            <constraint firstItem="mOZ-KV-Djo" firstAttribute="top" secondItem="AXe-LZ-yZO" secondAttribute="top" id="nCA-X7-tHe"/>
+                            <constraint firstItem="mOZ-KV-Djo" firstAttribute="bottom" secondItem="AXe-LZ-yZO" secondAttribute="bottom" id="nuL-1k-NWk"/>
+                            <constraint firstItem="mOZ-KV-Djo" firstAttribute="leading" secondItem="AXe-LZ-yZO" secondAttribute="leading" id="svC-aM-GFa"/>
+                            <constraint firstItem="mOZ-KV-Djo" firstAttribute="leading" secondItem="AXe-LZ-yZO" secondAttribute="leading" id="yXo-LW-x1U"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0aJ-1K-Qdr"/>
+                    <connections>
+                        <outlet property="tableView" destination="mOZ-KV-Djo" id="A1h-R1-FYl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22A-XG-8Rx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
