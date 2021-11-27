@@ -5,8 +5,9 @@
 //  Created by 米谷裕輝 on 2021/11/25.
 //
 
-import Foundation
+
 import UIKit
+import RealmSwift
 
 class MemoDetailViewController:UIViewController{
     @IBOutlet weak var textView: UITextView!
@@ -15,23 +16,23 @@ class MemoDetailViewController:UIViewController{
         dateFormatter.dateFormat = "yyyy年MM月dd日"
         return dateFormatter
     }
-    var text:String = ""
-    var recordDate:Date = Date()
+    // MemoDataModelをインスタンス化しているからmemoData
+    var memoData = MemoDataModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         displayData()
         setDoneButton()
-        print("detail")
+        textView.delegate = self
     }
     
     func configure(memoDetailData:MemoDataModel){
-        text = memoDetailData.text
-        recordDate = memoDetailData.recordDate
+        memoData.text = memoDetailData.text
+        memoData.recordDate = memoDetailData.recordDate
     }
     
     func displayData(){
-        textView.text = text
-        navigationItem.title = dateFormat.string(from: recordDate)
+        textView.text = memoData.text
+        navigationItem.title = dateFormat.string(from: memoData.recordDate)
     }
     //いつこのメソッドが呼び出されるか
     @objc func tapDoneButton(){
@@ -43,5 +44,22 @@ class MemoDetailViewController:UIViewController{
         let commitButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tapDoneButton))
         toolBar.items = [commitButton]
         textView.inputAccessoryView = toolBar
+    }
+    
+    func saveData(with text:String){
+        let realm = try! Realm()
+        try! realm.write {
+            memoData.text = text
+            memoData.recordDate = Date()
+            realm.add(memoData)
+        }
+        print("text:\(memoData.text) recordData:\(memoData.recordDate)")
+    }
+}
+
+extension MemoDetailViewController:UITextViewDelegate{
+    func textViewDidChange(_ textView: UITextView) {
+        let updateText = textView.text ?? ""
+        saveData(with:updateText)
     }
 }

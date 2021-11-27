@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
 class HomeViewController:UIViewController{
     @IBOutlet weak var tableView: UITableView!
@@ -15,16 +16,18 @@ class HomeViewController:UIViewController{
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        setMemoData()
         setNavigationBarButton()
-        print("home")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setMemoData()
+        tableView.reloadData()
     }
     
     func setMemoData(){
-        for i in 1...5{
-            let memoDataModel = MemoDataModel(text: "\(i)番目のセル", recordDate: Date())
-            memoDataList.append(memoDataModel)
-        }
+       let realm = try! Realm()
+       let result = realm.objects(MemoDataModel.self)
+        memoDataList = Array(result)
     }
     
     @objc func tapAddButton(){
