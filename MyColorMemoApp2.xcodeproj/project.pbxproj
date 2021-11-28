@@ -15,6 +15,7 @@
 		6D9D60CA274EF6E900694A76 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D60C9274EF6E900694A76 /* HomeViewController.swift */; };
 		6D9D60CC274F2F0900694A76 /* MemoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D60CB274F2F0900694A76 /* MemoDataModel.swift */; };
 		6D9D60CE274FB74A00694A76 /* MemoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D60CD274FB74A00694A76 /* MemoDetailViewController.swift */; };
+		6D9D6112275421D200694A76 /* MyColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9D6111275421D200694A76 /* MyColorType.swift */; };
 		8C290D7683C6C6D6C05FF5DD /* Pods_MyColorMemoApp2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A642398F0A6819EEA3DC27ED /* Pods_MyColorMemoApp2.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		6D9D60C9274EF6E900694A76 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6D9D60CB274F2F0900694A76 /* MemoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDataModel.swift; sourceTree = "<group>"; };
 		6D9D60CD274FB74A00694A76 /* MemoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoDetailViewController.swift; sourceTree = "<group>"; };
+		6D9D6111275421D200694A76 /* MyColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColorType.swift; sourceTree = "<group>"; };
 		972422B9346B1C3AF88F8B38 /* Pods-MyColorMemoApp2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyColorMemoApp2.release.xcconfig"; path = "Target Support Files/Pods-MyColorMemoApp2/Pods-MyColorMemoApp2.release.xcconfig"; sourceTree = "<group>"; };
 		A642398F0A6819EEA3DC27ED /* Pods_MyColorMemoApp2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyColorMemoApp2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA0D07104F9FB16F152EB11 /* Pods-MyColorMemoApp2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyColorMemoApp2.debug.xcconfig"; path = "Target Support Files/Pods-MyColorMemoApp2/Pods-MyColorMemoApp2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -52,7 +54,6 @@
 				CCA0D07104F9FB16F152EB11 /* Pods-MyColorMemoApp2.debug.xcconfig */,
 				972422B9346B1C3AF88F8B38 /* Pods-MyColorMemoApp2.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -94,6 +95,7 @@
 				6D9D60C3274ED7AC00694A76 /* Info.plist */,
 				6D9D60CB274F2F0900694A76 /* MemoDataModel.swift */,
 				6D9D60CD274FB74A00694A76 /* MemoDetailViewController.swift */,
+				6D9D6111275421D200694A76 /* MyColorType.swift */,
 			);
 			path = MyColorMemoApp2;
 			sourceTree = "<group>";
@@ -218,6 +220,7 @@
 				6D9D60B8274ED7A700694A76 /* SceneDelegate.swift in Sources */,
 				6D9D60CA274EF6E900694A76 /* HomeViewController.swift in Sources */,
 				6D9D60CC274F2F0900694A76 /* MemoDataModel.swift in Sources */,
+				6D9D6112275421D200694A76 /* MyColorType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

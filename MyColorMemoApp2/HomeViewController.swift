@@ -17,6 +17,7 @@ class HomeViewController:UIViewController{
         tableView.dataSource = self
         tableView.delegate = self
         setNavigationBarButton()
+        setNavigationBarLeftButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +41,40 @@ class HomeViewController:UIViewController{
         let buttonActionSelecter:Selector = #selector(tapAddButton)
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: buttonActionSelecter)
         navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    func setNavigationBarLeftButton(){
+        let buttonActionSelecter:Selector = #selector(didTapSettingColorButton)
+        let leftButtonImage = UIImage(named: "colorSettingIcon")
+        let leftBarButton = UIBarButtonItem(image: leftButtonImage, style: .plain, target: self, action: buttonActionSelecter)
+        navigationItem.leftBarButtonItem = leftBarButton
+    }
+    
+    @objc func didTapSettingColorButton(){
+        let defaultAction = UIAlertAction(title: "デフォルト", style: .default, handler:{_ -> Void in self.setThemeColor(type: .default)})
+        let orangeAction = UIAlertAction(title: "オレンジ", style: .default, handler:{_ -> Void in self.setThemeColor(type: .orange)})
+        let redAction = UIAlertAction(title: "レッド", style: .default, handler:{_ -> Void in self.setThemeColor(type: .red)})
+        let blueAction = UIAlertAction(title: "ブルー", style: .default, handler:{_ -> Void in self.setThemeColor(type: .blue)})
+        let pinkAction = UIAlertAction(title: "ピンク", style: .default, handler:{_ -> Void in self.setThemeColor(type: .pink)})
+        let greenAction = UIAlertAction(title: "グリーン", style: .default, handler:{_ -> Void in self.setThemeColor(type: .green)})
+        let purpleAction = UIAlertAction(title: "パープル", style: .default, handler:{_ -> Void in self.setThemeColor(type: .purple)})
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler:nil)
+        let alert = UIAlertController(title: "テーマカラーを選択してください", message: "", preferredStyle: .actionSheet)
+        
+        alert.addAction(defaultAction)
+        alert.addAction(orangeAction)
+        alert.addAction(redAction)
+        alert.addAction(blueAction)
+        alert.addAction(pinkAction)
+        alert.addAction(greenAction)
+        alert.addAction(purpleAction)
+        alert.addAction(cancelAction)
+        
+        present(alert,animated: true)   
+    }
+    
+    func setThemeColor(type:MyColorType){
+        navigationController?.navigationBar.barTintColor = type.color
     }
 }
 
