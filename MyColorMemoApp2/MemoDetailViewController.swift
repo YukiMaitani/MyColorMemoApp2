@@ -28,6 +28,7 @@ class MemoDetailViewController:UIViewController{
     func configure(memoDetailData:MemoDataModel){
         memoData.text = memoDetailData.text
         memoData.recordDate = memoDetailData.recordDate
+        memoData = memoDetailData
     }
     
     func displayData(){

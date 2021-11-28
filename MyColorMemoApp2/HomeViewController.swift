@@ -27,7 +27,7 @@ class HomeViewController:UIViewController{
     func setMemoData(){
        let realm = try! Realm()
        let result = realm.objects(MemoDataModel.self)
-        memoDataList = Array(result)
+       memoDataList = Array(result)
     }
     
     @objc func tapAddButton(){
@@ -66,5 +66,15 @@ extension HomeViewController:UITableViewDelegate{
         navigationController?.pushViewController(memoDetailViewController, animated: true)
         var memoData = memoDataList[indexPath.row]
         memoDetailViewController.configure(memoDetailData: memoData)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let target = memoDataList[indexPath.row]
+        let realm = try! Realm()
+        try! realm.write{
+            realm.delete(target)
+        }
+        memoDataList.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 }
