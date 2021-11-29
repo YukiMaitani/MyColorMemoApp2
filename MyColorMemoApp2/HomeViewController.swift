@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import RealmSwift
+import CoreData
 
 class HomeViewController:UIViewController{
     @IBOutlet weak var tableView: UITableView!
@@ -18,6 +19,7 @@ class HomeViewController:UIViewController{
         tableView.delegate = self
         setNavigationBarButton()
         setNavigationBarLeftButton()
+        setThemeColor(type: .default)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,7 +76,15 @@ class HomeViewController:UIViewController{
     }
     
     func setThemeColor(type:MyColorType){
-        navigationController?.navigationBar.barTintColor = type.color
+        let appearance = UINavigationBarAppearance()
+        let isDefault = type == .default
+        let tintColor:UIColor = isDefault ? .black : .white
+        navigationController?.navigationBar.tintColor = tintColor
+        appearance.backgroundColor = type.color
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:tintColor]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationItem.compactAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
     }
 }
 
