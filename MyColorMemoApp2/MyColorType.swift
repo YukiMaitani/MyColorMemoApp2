@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum MyColorType{
+enum MyColorType:Int{
     case `default`
     case orange
     case red

@@ -13,13 +13,16 @@ import CoreData
 class HomeViewController:UIViewController{
     @IBOutlet weak var tableView: UITableView!
     var memoDataList:[MemoDataModel] = []
+    let themeColoTypeKey = "themeColoTyperKey"
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         setNavigationBarButton()
         setNavigationBarLeftButton()
-        setThemeColor(type: .default)
+        let themeColorTypeInt = UserDefaults.standard.integer(forKey: themeColoTypeKey)
+        let themeColorType:MyColorType = MyColorType(rawValue: themeColorTypeInt) ?? .default
+        setThemeColor(type: themeColorType)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +88,11 @@ class HomeViewController:UIViewController{
         navigationController?.navigationBar.standardAppearance = appearance
         navigationItem.compactAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
+        saveThemeColor(type: type)
+    }
+    
+    func saveThemeColor(type:MyColorType){
+        UserDefaults.standard.setValue(type.rawValue, forKey: themeColoTypeKey)
     }
 }
 
